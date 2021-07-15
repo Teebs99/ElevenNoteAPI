@@ -35,5 +35,11 @@ namespace ElevenNote.WebAPI.Controllers
                 return InternalServerError();
             return Ok();
         }
+        public IHttpActionResult Get(int userId)
+        {
+            NoteService noteService = CreateNoteService();
+            var note = noteService.GetNoteById(id);
+            return Ok(note);
+        }
     }
 }
