@@ -23,9 +23,9 @@ namespace ElevenNote.Data
         public DateTimeOffset CreatedUtc { get; set; }
         
         public DateTimeOffset? ModifiedUtc { get; set; }
-        //[Required]
-        //[ForeignKey(nameof(Category))]
-        //public Category NoteType { get; set; }
-        //public virtual Category Category { get; set; }
+        [Required]
+        [ForeignKey(nameof(Category))]
+        public Category CategoryId { get; set; }
+        public virtual Category Category { get; set; }
     }
 }
